@@ -1,2 +1,2 @@
-# covid_community
-COVID Community is a website where Australians can acccess real-time, relevant and accurate information about COVID-19.
+# COVID Community
+The COVID Community project features a high-fidelity website prototype where individuals can access real-time, relevant and accurate information about COVID-19 symptoms and testing. The website has been designed to engage multicultural Australian communities with public health messages in order to reduce misinformation and misconceptions about the virus. However, the website is accessible for all Australians aged 16 and over.
