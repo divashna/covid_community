@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
         selectedDay,
         setDate,
         daysLen = days.length;
-// options should like '2014-01-01'
     function Calendar(selector, options) {
         this.options = options;
         this.draw();
@@ -34,18 +33,14 @@ document.addEventListener('DOMContentLoaded', function(){
     Calendar.prototype.drawHeader = function(e) {
         var headDay = document.getElementsByClassName('head-day'),
             headMonth = document.getElementsByClassName('head-month');
-
-            e?headDay[0].innerHTML = e : headDay[0].innerHTML = day;
-            headMonth[0].innerHTML = monthTag[month] +" - " + year;        
-     };
+        e ? headDay[0].innerHTML = e : headDay[0].innerHTML = day;
+        headMonth[0].innerHTML = monthTag[month] + " - " + year;
+    };
     
     Calendar.prototype.drawDays = function() {
         var startDay = new Date(year, month, 1).getDay(),
-//      下面表示这个月总共有几天
             nDays = new Date(year, month + 1, 0).getDate(),
-    
             n = startDay;
-//      清除原来的样式和日期
         for(var k = 0; k <42; k++) {
             days[k].innerHTML = '';
             days[k].id = '';
@@ -83,10 +78,8 @@ document.addEventListener('DOMContentLoaded', function(){
         selectedDay = new Date(year, month, o.innerHTML);
         this.drawHeader(o.innerHTML);
         this.setCookie('selected_day', 1);
-       
-		
     };
-  
+
     Calendar.prototype.preMonth = function() {
         if(month < 1){ 
             month = 11;
@@ -119,14 +112,13 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
     
-     Calendar.prototype.reset = function() {
-         month = today.getMonth();
-         year = today.getFullYear();
-         day = today.getDate();
-         this.options = undefined;
-         this.drawDays();
-         
-     };
+    Calendar.prototype.reset = function() {
+        month = today.getMonth();
+        year = today.getFullYear();
+        day = today.getDate();
+        this.options = undefined;
+        this.drawDays();
+    };
     
     Calendar.prototype.setCookie = function(name, expiredays){
         if(expiredays) {
@@ -156,15 +148,4 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
     var calendar = new Calendar();
-    
-        
 }, false);
-
-
-
-Resources
-
-
-
-
-
